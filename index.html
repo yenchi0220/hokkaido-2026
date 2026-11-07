@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>掃蕩北海道帝王蟹</title>
+<link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EAF2F8;--card:#FFFFFF;--tea:#BCD6E8;--deep:#3E6B8F;--ink:#2D4152;--sage:#8DB5A0;--line:#D8E7F1;--lav:#CDBFE8;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1B2733;--card:#243545;--tea:#4F7494;--deep:#A9CDEA;--ink:#E6EFF6;--sage:#6E9A86;--line:#30475A;--lav:#6F60A3;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1B2733;--card:#243545;--tea:#4F7494;--deep:#A9CDEA;--ink:#E6EFF6;--sage:#6E9A86;--line:#30475A;--lav:#6F60A3;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font:16px/1.7 'Huninn','Noto Sans TC','PingFang TC',sans-serif;background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23BCD6E8' stroke-width='1.6' stroke-linecap='round' opacity='.7'%3E%3Cg id='f'%3E%3Cpath d='M0-7V7M-6-3.500 6 3.500M-6 3.500 6-3.500'/%3E%3C/g%3E%3Cuse href='%23f' transform='translate(30 34)'/%3E%3Cuse href='%23f' transform='translate(120 70) scale(.7)'/%3E%3Cuse href='%23f' transform='translate(70 135) scale(1.200)'/%3E%3Cuse href='%23f' transform='translate(155 160) scale(.6)'/%3E%3C/g%3E%3C/svg%3E")}
+main{max-width:520px;margin:0 auto;padding:20px 16px 48px}
+header{position:relative;display:flex;align-items:center;gap:12px}
+header>svg:first-child{width:56px;height:56px;flex:none}
+.fl{position:absolute;right:4px;top:-4px;width:30px;height:30px;color:var(--deep);transform:rotate(28deg)}
+h1{font-size:1.6rem;line-height:1.25;margin:0;color:var(--deep)}
+.sub{margin:2px 0 0;font-size:.9rem;opacity:.75}
+.clock{margin:16px 0;padding:10px 14px;background:var(--card);border:2px dashed var(--tea);border-radius:20px 26px 18px 28px/26px 18px 28px 20px;display:flex;justify-content:space-between;align-items:baseline}
+.clock b{font-size:1.5rem;color:var(--deep);font-variant-numeric:tabular-nums}
+.clock span{font-size:.85rem;opacity:.75}
+.dv{display:block;width:100%;height:28px;margin:6px 0 12px;color:var(--tea)}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px}
+.tabs button{flex:none;font:inherit;padding:6px 14px;border-radius:18px 24px 16px 22px;border:2px solid var(--tea);background:var(--card);color:var(--ink);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--deep);border-color:var(--deep);color:var(--card)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--sage);outline-offset:2px}
+h2{display:inline-block;margin:6px 0 10px;font-size:1.2rem;color:var(--deep);background:linear-gradient(transparent 62%,var(--line) 62%);padding:0 6px}
+.map{background:var(--card);border:2px solid var(--tea);border-radius:20px 26px 18px 28px/26px 18px 28px 20px;box-shadow:3px 4px 0 var(--line);padding:8px}
+.map svg{display:block;width:100%;height:auto}
+.ctl{display:flex;gap:8px;margin-top:8px}
+.ctl button{font:inherit;padding:6px 16px;border-radius:999px;border:0;background:var(--lav);color:var(--ink);cursor:pointer;font-weight:700}
+.note{font-size:.8rem;opacity:.7;margin:8px 2px 14px}
+ol{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+li{position:relative;display:grid;grid-template-columns:76px 20px 1fr;align-items:start}
+li::before{content:"";position:absolute;left:85px;top:22px;bottom:-12px;border-left:2.5px dotted var(--tea)}
+li:last-child::before{display:none}
+.tm{padding:10px 6px 0 0;text-align:right;line-height:1.3}
+.tm b{display:block;font-size:.95rem;color:var(--deep);font-variant-numeric:tabular-nums}
+.tm span{display:inline-block;margin-top:3px;font-size:.82rem;padding:0 7px;border-radius:999px;background:var(--line);white-space:nowrap}
+.dot{position:relative;z-index:1;justify-self:center;margin-top:17px;width:14px;height:14px;border-radius:50%;border:3px solid var(--deep);background:var(--card)}
+.cd{margin-left:6px;padding:10px 14px 12px;background:var(--card);border:2px solid var(--tea);border-radius:20px 26px 18px 28px/26px 18px 28px 20px;box-shadow:2px 3px 0 var(--line)}
+li.on .cd{border-color:var(--deep);background:var(--line)}
+li.on .dot{background:var(--deep)}
+.cd strong{display:block;font-size:1.05rem;line-height:1.4}
+.ds{margin-top:4px;font-size:.88rem;opacity:.9}
+.ds p{margin:3px 0}
+.ds b{color:var(--deep)}
+.cd a{display:inline-block;margin-top:8px;color:var(--ink);font-size:.85rem;font-weight:700;text-decoration:none;border-bottom:2px solid var(--lav)}
+.ft{display:flex;justify-content:center;align-items:center;gap:10px;margin:26px 0 0;color:var(--deep);font-size:.9rem}
+.ft svg{width:28px;height:28px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="shuttle" viewBox="0 0 24 24"><path d="M8.500 16 5 4Q12 1 19 4l-3.500 12Z" fill="#fff" stroke="currentColor" stroke-width="1.300" stroke-linejoin="round"/><path d="M9 15 8 4.500M12 15V3M15 15l1-10.500" stroke="currentColor" stroke-width=".9" fill="none"/><circle cx="12" cy="19" r="4" fill="#F3D2AF" stroke="currentColor" stroke-width="1.300"/></symbol>
+<symbol id="racket" viewBox="0 0 40 40"><defs><clipPath id="rc"><ellipse cx="20" cy="13" rx="9" ry="12"/></clipPath></defs><g transform="rotate(-40 20 20)" stroke="currentColor" stroke-linecap="round"><ellipse cx="20" cy="13" rx="9" ry="12" fill="#fff" stroke="none"/><g clip-path="url(#rc)" stroke-width="1.400" opacity=".85"><path d="M16 0v26M20 0v26M24 0v26M6 8h28M6 13h28M6 18h28" fill="none"/></g><ellipse cx="20" cy="13" rx="9" ry="12" fill="none" stroke-width="2.800"/><path d="M20 25v12" stroke-width="3.200"/></g></symbol>
+<symbol id="pine" viewBox="0 0 24 24"><path d="M12 2 6 11h3l-4 6h5v5h4v-5h5l-4-6h3z" fill="#7FAF98" stroke="#4F7F6B" stroke-width="1.200" stroke-linejoin="round"/><path d="M12 2 9.500 6.500q2.500 1.500 5 0z" fill="#fff"/></symbol>
+<symbol id="snow" viewBox="0 0 24 24"><path d="M12 3v18M4.200 7.500l15.600 9M4.200 16.500l15.600-9" stroke="currentColor" stroke-width="1.700" stroke-linecap="round" fill="none"/></symbol>
+</svg>
+<main>
+<header>
+<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#pine"/></svg>
+<div><h1>掃蕩北海道帝王蟹</h1></div>
+<svg class="fl" viewBox="0 0 24 24" aria-hidden="true"><use href="#shuttle"/></svg>
+</header>
+<div class="clock" role="timer" aria-label="日本現在時間"><div><span>日本現在</span><br><b id="jp">--:--</b></div><span id="diff">比台灣快 1 小時</span></div>
+<svg class="dv" viewBox="0 0 360 28" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 7"><path d="M6 14H150M210 14H354"/></g><use href="#shuttle" x="167" y="1" width="26" height="26" style="color:#3E6B8F"/></svg>
+<div class="tabs" id="tabs" role="tablist"></div>
+<h2 id="dtitle"></h2>
+<div class="map">
+<svg id="map" viewBox="0 0 360 250" role="img" aria-label="當日路線示意圖">
+<path d="M0 205Q70 165 140 198T270 188T360 196V250H0Z" style="fill:var(--line)"/>
+<path d="M0 228Q90 205 180 226T360 218V250H0Z" style="fill:var(--tea);opacity:.55"/>
+<use href="#pine" x="4" y="98" width="32" height="32"/><use href="#pine" x="324" y="104" width="30" height="30"/><use href="#pine" x="188" y="196" width="28" height="28"/>
+<use href="#snow" x="112" y="14" width="16" height="16" style="color:#BCD6E8"/><use href="#snow" x="206" y="26" width="12" height="12" style="color:#BCD6E8"/><use href="#snow" x="28" y="150" width="14" height="14" style="color:#BCD6E8"/><use href="#snow" x="252" y="222" width="14" height="14" style="color:#BCD6E8"/>
+<path id="route" fill="none" stroke="#3E6B8F" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round"/>
+<g id="pins"></g>
+<use id="sh" href="#shuttle" width="30" height="30" style="color:#3E6B8F" visibility="hidden"/>
+</svg>
+<div class="ctl"><button id="play" aria-label="播放路線">▶ 播放</button><button id="spd" aria-label="切換速度">×1</button></div>
+</div>
+<p class="note">地圖為示意插畫，比例非實際距離；出發前請以 Google 地圖為準。行程內容來自你的 Notion，沒填時間的項目會顯示類別。</p>
+<svg class="dv" viewBox="0 0 360 28" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 7"><path d="M6 14H150M210 14H354"/></g><use href="#snow" x="168" y="2" width="24" height="24"/></svg>
+<ol id="list"></ol>
+
+</main>
+<script>
+var MM='https://www.google.com/maps/d/u/1/viewer?mid=1APQN0fJ6_NpFlf0GB-x7yOP5ZLrA--I&ll=43.056618300000025%2C141.35463389999998&z=19';
+var D=[{"tab":"D1 11/24","n":"D1 11/24（二）","t":"出發・抵達札幌","s":[["5:00","前往機場的路上","出發前往機場",28,215,"","🚗 移動"],["8:00","飛機","報到：6:00 到達機場，辦理 check in、托運行李\n航班：8:00 → 12:55",66,188,"","🚗 移動"],["","JR 或機場巴士","JR：37 分鐘，國內線 B1 搭乘\n機場巴士：1 小時，國際航廈 1F 84 月台（需現場買票）\n北斗交通：搭到地圖標記的站牌（見路線地圖）\n北海道中央巴士：搭到南三条博野",130,168,MM,"🚗 移動"],["","VIA INN 札幌大通","",205,118,"VIA INN 札幌大通","🏡 住宿"],["15:00","北海道神宮頓宮","找找看有沒有梅酒",112,78,"北海道神宮頓宮 札幌","⛱ 景點"],["","晚餐：SHO-RIN Susukino Main Store","湯咖哩",250,150,"SHO-RIN Susukino Main Store 札幌","🧁 吃喝"]]},
+{"tab":"D2 11/25","n":"D2 11/25（三）","t":"札幌市區散步","s":[["","早餐：場外市場","交通：地下鐵東西線 大通 → 二十四軒，5 號出口\n選項一：Kaisendon Umedo Sapporo Store\n選項二：Kitano Gurume\n咖啡：Takanna Coffee 有好喝的咖啡",50,75,"札幌場外市場","🧁 吃喝"],["","北海道大學","",140,45,"北海道大學","⛱ 景點"],["","午餐：Japanese Ramen Noodle Lab Q","地點：URBANNET 札幌 LINK TOWER 1 樓\n營業：11:00～14:30",225,80,"Japanese Ramen Noodle Lab Q 札幌","🧁 吃喝"],["","札幌車站週邊","逛逛：札幌農学校 JR 車站\n逛逛：Norseman Daimaru Sapporo（大丸 B1）",285,135,"札幌車站","⛱ 景點"],["","諏訪神社","",200,165,"諏訪神社 札幌","⛱ 景點"],["","VIA INN 札幌大通","",120,190,"VIA INN 札幌大通","🏡 住宿"]]},
+{"tab":"D3 11/26","n":"D3 11/26（四）","t":"燒肉之夜","s":[["18:30","晚餐：Yakiniku Tokuju K-Place 燒肉","✅ 已訂位",200,100,"Yakiniku Tokuju K-Place 札幌","🧁 吃喝"],["","Vessel 薄野","",260,160,"Vessel 薄野 札幌","🏡 住宿"]]},
+{"tab":"D4 11/27","n":"D4 11/27（五）","t":"洞爺湖自駕","s":[["9:00","飯店門口取車","租車期間：到 11/28 18:00",60,190,"","其他"],["9:30","札幌→洞爺湖","時間：9:30 → 12:00\n順路：可停留「望羊中山休息站」休息",140,150,"望羊中山休息站","🚗 移動"],["","午餐：Matsumaeya (TBC)","",215,105,"Matsumaeya 洞爺湖","🧁 吃喝"],["","洞爺湖汽船","時間：9:00～16:00，每 60 分鐘一班\n船程：45 分鐘\n注意：純粹遊湖，無法在中島下船",275,60,"洞爺湖汽船","⛱ 景點"],["","有珠山纜車口","時間：9:00～16:00，每 15 分鐘一班\n單程：6 分鐘",315,155,"有珠山纜車","⛱ 景點"],["","乃之風","",245,195,"乃之風 洞爺湖","🏡 住宿"]]},
+{"tab":"D5 11/28","n":"D5 11/28（六）","t":"回札幌・神宮","s":[["10:30","洞爺湖→Totiton圓山店","時間：10:30 → 13:00",80,160,"","🚗 移動"],["","午餐：Totiton圓山店","",160,110,"Totiton 圓山店 札幌","🧁 吃喝"],["","北海道神宮","必吃：神宮茶屋的福餅＆牛奶霜淇淋\n順便：找找看有沒有好喝的梅酒",230,65,"北海道神宮 札幌","⛱ 景點"],["21:00","宵夜：串鳥 札幌駅前店","✅ 已訂位",290,140,"串鳥 札幌駅前店","🧁 吃喝"]]},
+{"tab":"D6 11/29","n":"D6 11/29（日）","t":"小樽・羊八","s":[["","札幌→南小樽","交通：札幌站搭 JR\n時間：快速／普通 35～55 分鐘",70,170,"","🚗 移動"],["","小樽堺町通商店街","🍮 Un délice：布丁大福\n🍪 LeTAO 總店：伴手禮、總店限定烤費南雪\n🍦 北菓楼 小樽本館：泡芙、霜淇淋\n🍵 茶和和 小樽店：抹茶",170,90,"小樽堺町通商店街","🛒 逛街"],["19:30","晚餐：羊八","✅ 已預約 19:30\n分組：分成 3、3",280,150,"羊八 札幌","🧁 吃喝"]]}];
+var cur=0,speed=1,raf=0,$=function(i){return document.getElementById(i)};
+function gm(q){if(/^http/.test(q))return q;return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q)}
+function ds(t){return t?'<div class="ds">'+t.split('\n').map(function(l){var i=l.indexOf('：');return i>0&&i<18?'<p><b>'+l.slice(0,i)+'</b>　'+l.slice(i+1)+'</p>':'<p>'+l+'</p>'}).join('')+'</div>':''}
+function render(i){cancelAnimationFrame(raf);$('play').textContent='▶ 播放';$('sh').setAttribute('visibility','hidden');cur=i;var d=D[i];
+$('dtitle').textContent=d.n+'｜'+d.t;
+[].forEach.call($('tabs').children,function(b,k){b.setAttribute('aria-selected',k==i)});
+$('route').setAttribute('d',d.s.map(function(p,k){return(k?'L':'M')+p[3]+' '+p[4]}).join(''));
+$('pins').innerHTML=d.s.map(function(p,k){return '<g><circle cx="'+p[3]+'" cy="'+p[4]+'" r="12" fill="#CDBFE8" stroke="#3E6B8F" stroke-width="2"/><text x="'+p[3]+'" y="'+(p[4]+4.500)+'" text-anchor="middle" font-size="13" font-weight="700" fill="#2D4152">'+(k+1)+'</text></g>'}).join('');
+$('list').innerHTML=d.s.map(function(p,k){return '<li data-k="'+k+'"><div class="tm">'+(p[0]?'<b>'+p[0]+'</b>':'')+'<span>'+p[6]+'</span></div><i class="dot"></i><div class="cd"><strong>'+p[1]+'</strong>'+ds(p[2])+(p[5]?'<a href="'+gm(p[5]).replace(/&/g,'&amp;')+'" target="_blank" rel="noopener">📍 '+(/^http/.test(p[5])?'路線地圖':'Google 地圖')+'</a>':'')+'</div></li>'}).join('')}
+function hi(k){[].forEach.call($('list').children,function(li,j){li.classList.toggle('on',j==k)})}
+function play(){var r=$('route'),L=r.getTotalLength(),s=D[cur].s,cum=[0];
+for(var k=1;k<s.length;k++)cum.push(cum[k-1]+Math.hypot(s[k][3]-s[k-1][3],s[k][4]-s[k-1][4]));
+var tot=cum[cum.length-1],t0=performance.now(),dur=7000/speed;$('sh').setAttribute('visibility','visible');$('play').textContent='■ 停止';
+(function f(n){var u=Math.min((n-t0)/dur,1),p=r.getPointAtLength(u*L),d=u*tot,a=0;
+for(var k=0;k<cum.length;k++)if(cum[k]<=d+.5)a=k;hi(a);
+$('sh').setAttribute('x',p.x-15);$('sh').setAttribute('y',p.y-26);
+if(u<1)raf=requestAnimationFrame(f);else $('play').textContent='▶ 播放'})(t0)}
+$('tabs').innerHTML=D.map(function(d,k){return '<button role="tab" data-k="'+k+'">'+d.tab+'</button>'}).join('');
+$('tabs').onclick=function(e){var b=e.target.closest('button');if(b)render(+b.dataset.k)};
+$('play').onclick=function(){if(this.textContent.indexOf('■')>-1){cancelAnimationFrame(raf);this.textContent='▶ 播放';$('sh').setAttribute('visibility','hidden')}else play()};
+$('spd').onclick=function(){speed=speed==1?2:speed==2?4:1;this.textContent='×'+speed};
+$('list').onclick=function(e){var li=e.target.closest('li');if(li&&!e.target.closest('a'))hi(+li.dataset.k)};
+function tick(){try{$('jp').textContent=new Intl.DateTimeFormat('zh-TW',{timeZone:'Asia/Tokyo',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date())}catch(e){}}
+tick();setInterval(tick,1000);render(0);
+</script>
+</body>
+</html>
